@@ -9,9 +9,9 @@ export const Counter = () => {
 	}
 
 	return (
-		<div className={classes.btn}>
+		<div>
 			<h1>{count}</h1>
-			<button onClick={increment}>increment</button>
+			<button className={classes.button} onClick={increment}>increment</button>
 		</div>
 	)
 };
