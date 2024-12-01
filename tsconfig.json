@@ -4,13 +4,14 @@
     "noImplicitAny": true,
     "module": "esnext",
     "target": "esnext",
-    // "module": "es6",
-    // "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     //Для абсолютного импорта
-    // "baseUrl": ". ",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
