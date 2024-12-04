@@ -4,6 +4,7 @@ import typescriptParser from '@typescript-eslint/parser';
 import i18nextPlugin from 'eslint-plugin-i18next';
 
 export default [
+  // Общая конфигурация для всех файлов
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
@@ -31,15 +32,20 @@ export default [
     },
     rules: {
       // Рекомендуемые правила плагина i18next
-      'i18next/no-literal-string': ['error', { markupOnly: true }],
-
+      'i18next/no-literal-string': [
+        'error',
+        {
+          markupOnly: true,
+          ignoreAttribute: ['data-testid'],
+        },
+      ],
       // Ваши собственные правила
       'react/jsx-indent': [2, 2],
       'react/jsx-indent-props': [2, 2],
       indent: [2, 2],
       'react/jsx-filename-extension': [
         2,
-        { extensions: ['.js', '.jsx', '.tsx'] },
+        { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
       ],
       'import/no-unresolved': 'off',
       'import/prefer-default-export': 'off',
@@ -59,6 +65,13 @@ export default [
           ignoreComments: true,
         },
       ],
+    },
+  },
+  // Конфигурация для тестовых файлов
+  {
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
     },
   },
 ];
