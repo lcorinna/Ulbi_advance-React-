@@ -21,6 +21,7 @@ export default [
         plugins: {
             react: reactPlugin,
             '@typescript-eslint': typescriptPlugin,
+            'extends': ["plugin:i18next/recommended"],
         },
         settings: {
             react: {
@@ -43,6 +44,7 @@ export default [
             'import/extensions': 'off',
             'import/no-extraneous-dependencies': 'off',
             'no-underscore-dangle': 'off',
+            'i18next/no-literal-string': ['error', { markupOnly: true }],
         },
     },
 ];
