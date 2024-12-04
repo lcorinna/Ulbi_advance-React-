@@ -6,7 +6,7 @@ import { NavBar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 
-export const App = () => {
+const App = () => {
   const {theme} = useTheme()
 
   return (
@@ -21,3 +21,5 @@ export const App = () => {
     </div>
   )
 }
+
+export default App;
