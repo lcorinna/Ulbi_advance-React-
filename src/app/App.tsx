@@ -7,17 +7,17 @@ import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 
 export const App = () => {
-	const {theme} = useTheme()
+  const {theme} = useTheme()
 
-	return (
-		<div className={classNames('app', {}, [theme])}>
-			<Suspense fallback=''>
-				<NavBar />
-				<div className='content-page'>
-					<Sidebar />
-					<AppRouter/>
-				</div>
-			</Suspense>
-		</div>
-	)
+  return (
+    <div className={classNames('app', {}, [theme])}>
+      <Suspense fallback=''>
+        <NavBar />
+        <div className='content-page'>
+          <Sidebar />
+          <AppRouter/>
+        </div>
+      </Suspense>
+    </div>
+  )
 }
