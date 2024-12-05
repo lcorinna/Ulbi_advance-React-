@@ -36,7 +36,7 @@ export default [
         'error',
         {
           markupOnly: true,
-          ignoreAttribute: ['data-testid'],
+          ignoreAttribute: ['data-testid', 'to'],
         },
       ],
       // Ваши собственные правила

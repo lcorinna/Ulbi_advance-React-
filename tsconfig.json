@@ -5,6 +5,7 @@
     "module": "esnext",
     "target": "esnext",
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "allowJs": true,
     "moduleResolution": "node",
     //Для абсолютного импорта
@@ -17,7 +18,8 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "forceConsistentCasingInFileNames": true
     }
   },
   //исключает папки, чтобы не ругаться при сборке
