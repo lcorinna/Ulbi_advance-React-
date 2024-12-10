@@ -8,6 +8,7 @@
     "jsxImportSource": "react",
     "allowJs": true,
     "moduleResolution": "node",
+    "typeRoots": ["./src/app/types", "./node_modules/@types"],
     //Для абсолютного импорта
     "baseUrl": ".",
     "paths": {
@@ -23,7 +24,7 @@
     }
   },
   //исключает папки, чтобы не ругаться при сборке
-  "exclude": ["build"],
+  "exclude": ["build", "node_modules", "dist"],
   "include": [
     "./config/jest/setupTest.ts",
     "./src/**/*"

@@ -5,6 +5,8 @@
     ["@babel/preset-react", { "runtime": "automatic" }]
   ],
   "plugins": [
-    "i18next-extract"
+    "i18next-extract",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
   ]
 }

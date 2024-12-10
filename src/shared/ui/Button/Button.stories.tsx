@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Button } from './Button';
+import { Button, ThemeButton } from './Button';
+import 'app/styles/index.scss';
 
 const meta = {
   title: 'shared/Button',
@@ -21,13 +22,22 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    children: 'Text',
   },
 };
 
-export const Secondary: Story = {
+export const Clear: Story = {
   args: {
-    label: 'Button',
+    children: 'Text',
+    theme: ThemeButton.CLEAR,
   },
 };
+
+export const Outline: Story = {
+  args: {
+    children: 'Text',
+    theme: ThemeButton.OUTLINE,
+  },
+};
+  
+ 

@@ -15,14 +15,18 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     use: { 
       loader: "babel-loader",
       options: {
-        presets: ['@babel/preset-env', "@babel/preset-react"],
-        "plugins": [
-          ["i18next-extract", 
-            {
-              localies: ['ru', 'en'],
-              keyAsDefaultValue: true
-            }
-          ],
+        presets: [
+          ["@babel/preset-env", { "targets": "defaults" }],
+          ["@babel/preset-react", { runtime: "automatic" }],
+          ["@babel/preset-typescript"]
+        ],
+        plugins: [
+          ["i18next-extract", {
+            locales: ['ru', 'en'],
+            keyAsDefaultValue: true,
+          }],
+          ["@babel/plugin-proposal-decorators", { legacy: true }],
+          ["@babel/plugin-proposal-class-properties", { loose: true }]
         ]
       }
     }
@@ -35,7 +39,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
-  }
+  };
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
